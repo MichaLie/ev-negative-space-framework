@@ -1,0 +1,13 @@
+{
+  "records_identified_topN": 929,
+  "unique_pmids_screened": 813,
+  "included_primary_high": 386,
+  "included_contextual": 459,
+  "excluded_low_relevance": 84,
+  "run_date": "2026-02-15",
+  "date_window": {
+    "mindate": "2015/01/01",
+    "maxdate": "2026/02/15"
+  },
+  "retmax_per_cell": 40
+}

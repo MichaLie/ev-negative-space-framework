@@ -1,0 +1,16 @@
+pathway,context,n_papers,mean_directionality_score
+Autophagy,cardiac_repair,5,0.0
+Autophagy,neurodegeneration,5,-0.2
+Autophagy,tumor_metastasis,0,
+Hypoxia/HIF-1,cardiac_repair,0,
+Hypoxia/HIF-1,neurodegeneration,3,-1.0
+Hypoxia/HIF-1,tumor_metastasis,4,1.0
+Integrin/Src,cardiac_repair,4,-0.25
+Integrin/Src,neurodegeneration,0,
+Integrin/Src,tumor_metastasis,7,0.42857142857142855
+TGF-beta,cardiac_repair,3,-1.0
+TGF-beta,neurodegeneration,0,
+TGF-beta,tumor_metastasis,5,0.2
+Wnt,cardiac_repair,3,-1.0
+Wnt,neurodegeneration,0,
+Wnt,tumor_metastasis,3,1.0

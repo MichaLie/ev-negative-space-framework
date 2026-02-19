@@ -1,0 +1,11 @@
+pathway,priority_threshold_50,priority_threshold_75,priority_threshold_100,priority_threshold_150,priority_continuous
+Integrin/Src,12.19,12.19,12.19,12.19,36.57
+Autophagy,8.41,5.61,5.61,5.61,8.41
+TGF-beta,3.69,3.69,3.69,0.0,11.08
+Wnt,3.21,3.21,3.21,3.21,9.62
+Hypoxia/HIF-1,4.57,3.05,3.05,1.52,4.57
+mTOR,4.51,3.0,1.5,1.5,4.51
+Complement,2.67,0.0,0.0,0.0,4.0
+NF-kB,1.57,0.0,0.0,0.0,4.71
+Notch,2.0,0.0,0.0,0.0,6.0
+Sphingolipid/Ceramide,2.17,2.17,0.0,0.0,6.5

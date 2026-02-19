@@ -1,0 +1,6 @@
+pathway,cardiac_repair,neurodegeneration,tumor_metastasis
+Autophagy,0.0,-0.2,
+Hypoxia/HIF-1,,-1.0,1.0
+Integrin/Src,-0.25,,0.42857142857142855
+TGF-beta,-1.0,,0.2
+Wnt,-1.0,,1.0

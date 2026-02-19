@@ -1,0 +1,13 @@
+formulation,spearman_vs_baseline,top1,top2,top3
+ratio_x_maturity100_s0.5,1.0,Integrin/Src,Autophagy,TGF-beta
+ratio_x_maturity100_s1.0,1.0,Integrin/Src,Autophagy,TGF-beta
+ratio_x_maturity100_s2.0,1.0,Integrin/Src,Autophagy,TGF-beta
+ratio_x_logtotal_s2.0,0.7697,Integrin/Src,Autophagy,TGF-beta
+ratio_x_logtotal_s0.5,0.7576,Integrin/Src,TGF-beta,Autophagy
+ratio_x_logtotal_s1.0,0.7576,Integrin/Src,TGF-beta,Autophagy
+ratio_x_donor_s2.0,0.7455,Integrin/Src,TGF-beta,Autophagy
+ratio_x_donor_s0.5,0.7333,Integrin/Src,TGF-beta,Wnt
+ratio_x_donor_s1.0,0.7333,Integrin/Src,TGF-beta,Wnt
+ratio_only_s2.0,0.6242,Integrin/Src,TGF-beta,Wnt
+ratio_only_s0.5,0.5879,Integrin/Src,TGF-beta,Wnt
+ratio_only_s1.0,0.5879,Integrin/Src,TGF-beta,Wnt

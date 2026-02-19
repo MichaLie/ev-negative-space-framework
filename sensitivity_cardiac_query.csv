@@ -1,0 +1,11 @@
+pathway,neuro_strict,tumor_strict,cardiac_strict,cardiac_relaxed,cardiac_broadest
+mTOR,87,301,66,174,314
+Wnt,37,201,20,49,99
+Notch,12,59,9,19,26
+NF-kB,23,65,13,62,105
+Complement,71,58,17,46,126
+Sphingolipid/Ceramide,90,39,13,32,72
+Autophagy,428,220,50,166,319
+Hypoxia/HIF-1,60,278,133,374,463
+Integrin/Src,31,255,6,32,119
+TGF-beta,17,143,12,63,102
