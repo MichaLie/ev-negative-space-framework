@@ -1,12 +1,10 @@
 # Negative-Space Framework for Translational EV Research
 
-This is a curated local candidate for the public analysis repository that supports the manuscript:
+This repository contains the analysis scripts, frozen outputs, and figures supporting the manuscript:
 
 `A Reproducible Framework for Mapping Translational Evidence Gaps in Extracellular Vesicle Research`
 
-The aim of this repository is to expose the computational artifact behind the paper in a clean, inspection-friendly form without mixing in journal submission packaging.
-
-The figures included here are aligned to the final JEV-ready package (`SUBMIT_JEV_V3`) rather than to earlier intermediate submission states.
+It is intended as the public computational artifact behind the paper and is organized for inspection, reuse, and reproducibility.
 
 ## Scope
 
