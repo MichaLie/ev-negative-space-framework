@@ -47,7 +47,8 @@ CONTEXTS = {
     'cardiac_repair': '((myocardial infarction OR ischemia-reperfusion OR heart failure OR cardiac injury) AND (repair OR regeneration OR cardioprotection OR post-infarction))',
 }
 
-# Candidate panel intentionally constrained to pathway-priority and full-text supported terms.
+# Candidate panel intentionally constrained to pathway-priority and full-text supported terms,
+# including canonical EV positive controls and a small number of donor-rich one-context exemplars.
 CANDIDATES = [
     # RNA
     {'cargo_type': 'RNA', 'name': 'miR-21', 'query': '("miR-21" OR "microRNA-21")', 'pathway': 'TGF-beta'},
