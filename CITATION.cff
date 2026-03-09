@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Negative-Space Framework for Translational EV Research"
+message: "If you use this repository, please cite the associated manuscript and repository."
+type: software
+authors:
+  - family-names: "Liegertova"
+    given-names: "Michaela"
+    orcid: "https://orcid.org/0000-0003-3858-856X"
+  - family-names: "Maly"
+    given-names: "Jan"
+repository-code: "https://github.com/MichaLie/ev-negative-space-framework"
+license: "MIT"

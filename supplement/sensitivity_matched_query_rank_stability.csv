@@ -1,0 +1,4 @@
+tier,top1,top2,top3,spearman_vs_strict
+strict,Integrin/Src,Autophagy,TGF-beta,1.0
+relaxed,mTOR,Autophagy,Hypoxia/HIF-1,0.6121
+broadest,TGF-beta,mTOR,Integrin/Src,0.6364

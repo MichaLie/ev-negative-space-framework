@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-02-15",
+  "window": {
+    "mindate": "2015/01/01",
+    "maxdate": "2026/02/15"
+  },
+  "outputs": [
+    "supplement/sensitivity_matched_query_counts_by_tier.csv",
+    "supplement/sensitivity_matched_query_priority_ranks.csv",
+    "supplement/sensitivity_matched_query_rank_stability.csv",
+    "supplement/priority_index_alternative_formulations.csv",
+    "supplement/priority_index_rank_stability_summary.csv",
+    "supplement/integrin_src_partition_counts.csv"
+  ],
+  "matched_query_tiers": [
+    "strict",
+    "relaxed",
+    "broadest"
+  ],
+  "index_formulations_summary_rows": 12,
+  "integrin_src_contexts": 3
+}
