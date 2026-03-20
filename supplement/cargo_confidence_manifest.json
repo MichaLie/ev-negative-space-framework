@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-02-15",
+  "date_window": {
+    "mindate": "2015/01/01",
+    "maxdate": "2026/02/15"
+  },
+  "sources": {
+    "exocarta_mirna": "http://www.exocarta.org/Archive/ExoCarta_miRNA_details_6.txt",
+    "exocarta_protein_mrna": "http://www.exocarta.org/Archive/ExoCarta_protein_mRNA_details_6.txt",
+    "mirbase_mature": "https://www.mirbase.org/download/mature.fa",
+    "uniprot_search": "https://rest.uniprot.org/uniprotkb/search",
+    "pubmed_eutils": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+    "fulltext_adjudication": "https://github.com/MichaLie/ev-negative-space-framework/blob/main/fulltext_mechanistic_adjudication_final.csv",
+    "optional_not_used_for_scoring": [
+      "EV-TRACK (no open export endpoint identified in this run)",
+      "RNAcentral (endpoint instability/timeouts during this run)"
+    ]
+  },
+  "scoring_weights": {
+    "identifier": 0.25,
+    "exocarta": 0.25,
+    "breadth": 0.25,
+    "mechanistic": 0.15,
+    "biomarker": 0.1
+  },
+  "n_candidates": 31
+}

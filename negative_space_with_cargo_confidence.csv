@@ -1,0 +1,11 @@
+pathway,tumor_metastasis_count,cardiac_repair_count,neurodegeneration_count,tumor_attention,cardiac_attention,neuro_attention,max_context,min_context,max_to_min_ratio,contexts_ge100,negative_space_priority_index,n_candidates,mean_confidence,median_confidence,n_high,n_moderate,n_low,actionability_index
+Integrin/Src,255,6,31,Moderate,Low,Low,tumor_metastasis,cardiac_repair,36.57,1,12.19,8.0,64.04650771672057,64.48451984031924,2.0,6.0,0.0,7.807269290668237
+Autophagy,220,50,428,Moderate,Low,Moderate,neurodegeneration,cardiac_repair,8.41,2,5.61,6.0,82.77363388844523,84.64968898572873,6.0,0.0,0.0,4.643600861141778
+TGF-beta,143,12,17,Moderate,Low,Low,tumor_metastasis,cardiac_repair,11.08,1,3.69,5.0,70.43792155264337,74.88215322827867,3.0,2.0,0.0,2.599159305292541
+Wnt,201,20,37,Moderate,Low,Low,tumor_metastasis,cardiac_repair,9.62,1,3.21,3.0,74.88344575841718,74.53023319574451,2.0,1.0,0.0,2.4037586088451914
+Hypoxia/HIF-1,278,133,60,Moderate,Moderate,Low,tumor_metastasis,neurodegeneration,4.57,2,3.05,2.0,72.7043398763135,72.7043398763135,2.0,0.0,0.0,2.2174823662275616
+mTOR,301,66,87,Moderate,Low,Low,tumor_metastasis,cardiac_repair,4.51,1,1.5,4.0,72.69366168529436,77.88128916425929,3.0,1.0,0.0,1.0904049252794155
+Complement,58,17,71,Low,Low,Low,neurodegeneration,cardiac_repair,4.0,0,0.0,2.0,70.04523944077528,70.04523944077528,1.0,1.0,0.0,0.0
+NF-kB,65,13,23,Low,Low,Low,tumor_metastasis,cardiac_repair,4.71,0,0.0,1.0,76.89177678238924,76.89177678238924,1.0,0.0,0.0,0.0
+Notch,59,9,12,Low,Low,Low,tumor_metastasis,cardiac_repair,6.0,0,0.0,,0.0,,,,,0.0
+Sphingolipid/Ceramide,39,13,90,Low,Low,Low,neurodegeneration,cardiac_repair,6.5,0,0.0,,0.0,,,,,0.0

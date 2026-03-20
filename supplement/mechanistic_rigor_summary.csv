@@ -1,0 +1,7 @@
+summary_level,pathway,n_papers,mean_mechanistic_score_strict,high_confidence_count,moderate_confidence_count,in_vivo_count,in_vivo_pct,in_vitro_count,in_vitro_pct,human_samples_count,human_samples_pct,causal_perturbation_count,causal_perturbation_pct,ev_isolation_count,ev_isolation_pct,ev_markers_count,ev_markers_pct,context_endpoint_match_count,context_endpoint_match_pct
+overall,all,42,7.548,38,4,42,100.0,39,92.9,35,83.3,41,97.6,38,90.5,40,95.2,42,100.0
+by_pathway,Autophagy,10,7.5,8,2,10,100.0,8,80.0,10,100.0,10,100.0,10,100.0,9,90.0,10,100.0
+by_pathway,Hypoxia/HIF-1,7,7.429,7,0,7,100.0,6,85.7,3,42.9,7,100.0,7,100.0,7,100.0,7,100.0
+by_pathway,Integrin/Src,11,7.636,10,1,11,100.0,11,100.0,11,100.0,10,90.9,9,81.8,11,100.0,11,100.0
+by_pathway,TGF-beta,8,8.0,8,0,8,100.0,8,100.0,8,100.0,8,100.0,8,100.0,8,100.0,8,100.0
+by_pathway,Wnt,6,7.0,5,1,6,100.0,6,100.0,3,50.0,6,100.0,4,66.7,5,83.3,6,100.0

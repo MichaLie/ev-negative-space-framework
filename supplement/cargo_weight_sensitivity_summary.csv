@@ -1,0 +1,7 @@
+scheme,spearman_vs_baseline,top10_overlap_vs_baseline,top5_candidates
+baseline,1.0,10,CD63; CD81; AKT1; CTNNB1; miR-21
+biomarker_heavy,0.9819,10,CD63; AKT1; CD81; CTNNB1; miR-21
+breadth_heavy,0.9911,10,CD63; AKT1; CD81; CTNNB1; miR-21
+equal,0.9895,9,CD63; AKT1; CD81; CTNNB1; miR-21
+exocarta_heavy,0.9919,10,CD63; CD81; PDCD6IP; CTNNB1; TSG101
+mechanistic_heavy,0.9742,9,CD63; AKT1; CAV1; CTNNB1; CD81

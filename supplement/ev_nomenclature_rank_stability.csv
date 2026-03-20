@@ -1,0 +1,5 @@
+ev_clause_label,spearman_vs_current_baseline,top5_overlap_vs_current_baseline,top2_pathways,top5_pathways
+current_baseline,1.0,5,Integrin/Src; Autophagy,Integrin/Src; Autophagy; TGF-beta; Wnt; Hypoxia/HIF-1
+expanded_ev,1.0,5,Integrin/Src; Autophagy,Integrin/Src; Autophagy; TGF-beta; Wnt; Hypoxia/HIF-1
+legacy_exosome,0.6606,4,Integrin/Src; Autophagy,Integrin/Src; Autophagy; Wnt; Hypoxia/HIF-1; mTOR
+umbrella_ev,0.3576,3,Integrin/Src; Autophagy,Integrin/Src; Autophagy; Hypoxia/HIF-1; Complement; NF-kB

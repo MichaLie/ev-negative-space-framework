@@ -1,0 +1,167 @@
+{
+  "run_date": "2026-02-15",
+  "window": {
+    "mindate": "2015/01/01",
+    "maxdate": "2026/02/15"
+  },
+  "ev_clause": "(extracellular vesicle OR exosome OR exosomes)",
+  "contexts": {
+    "neurodegeneration": {
+      "query": "(neurodegeneration OR neurodegenerative OR Alzheimer OR Parkinson OR \"amyotrophic lateral sclerosis\" OR ALS OR frontotemporal dementia OR Huntington)",
+      "keywords": [
+        "neurodegeneration",
+        "neurodegenerative",
+        "alzheimer",
+        "parkinson",
+        "als",
+        "dementia",
+        "neuronal",
+        "brain"
+      ]
+    },
+    "tumor_metastasis": {
+      "query": "((cancer OR tumor OR tumour) AND (metastasis OR metastatic OR premetastatic OR organotropism OR dissemination))",
+      "keywords": [
+        "cancer",
+        "tumor",
+        "tumour",
+        "metastasis",
+        "metastatic",
+        "pre-metastatic",
+        "premetastatic",
+        "organotrop"
+      ]
+    },
+    "cardiac_repair": {
+      "query": "((myocardial infarction OR ischemia-reperfusion OR heart failure OR cardiac injury) AND (repair OR regeneration OR cardioprotection OR post-infarction))",
+      "keywords": [
+        "cardiac",
+        "heart",
+        "myocardial",
+        "infarction",
+        "cardiomyocyte",
+        "angiogenesis",
+        "fibrosis"
+      ]
+    }
+  },
+  "cargo_axes": {
+    "proteins/proteomics": {
+      "query": "(protein OR proteomics)",
+      "keywords": [
+        "protein",
+        "proteomic",
+        "proteome"
+      ]
+    },
+    "miRNA": {
+      "query": "(miRNA OR microRNA)",
+      "keywords": [
+        "mir",
+        "microrna"
+      ]
+    },
+    "lipids/lipidomics": {
+      "query": "(lipid OR lipidomics OR sphingolipid OR ceramide)",
+      "keywords": [
+        "lipid",
+        "lipidomic",
+        "ceramide",
+        "sphingolipid",
+        "s1p"
+      ]
+    }
+  },
+  "pathways": {
+    "mTOR": {
+      "query": "(mTOR OR PI3K OR AKT)",
+      "keywords": [
+        "mtor",
+        "pi3k",
+        "akt"
+      ]
+    },
+    "Wnt": {
+      "query": "(Wnt OR beta-catenin OR CTNNB1)",
+      "keywords": [
+        "wnt",
+        "beta-catenin",
+        "ctnnb1"
+      ]
+    },
+    "Notch": {
+      "query": "(Notch OR NOTCH1)",
+      "keywords": [
+        "notch",
+        "notch1"
+      ]
+    },
+    "NF-kB": {
+      "query": "(\"NF-kappa B\" OR NF-kB OR NFKB1)",
+      "keywords": [
+        "nf-kappa",
+        "nf-kb",
+        "nfkb"
+      ]
+    },
+    "Complement": {
+      "query": "(complement OR C3 OR C5)",
+      "keywords": [
+        "complement",
+        "c3",
+        "c5",
+        "c3ar"
+      ]
+    },
+    "Sphingolipid/Ceramide": {
+      "query": "(sphingolipid OR ceramide OR sphingomyelinase OR S1P)",
+      "keywords": [
+        "sphingolipid",
+        "ceramide",
+        "sphingomyelin",
+        "s1p"
+      ]
+    },
+    "Autophagy": {
+      "query": "(autophagy OR mitophagy OR lysosome)",
+      "keywords": [
+        "autophagy",
+        "mitophagy",
+        "lysosome",
+        "autophagic"
+      ]
+    },
+    "Hypoxia/HIF-1": {
+      "query": "(hypoxia OR HIF-1 OR HIF1A)",
+      "keywords": [
+        "hypoxia",
+        "hif-1",
+        "hif1a"
+      ]
+    },
+    "Integrin/Src": {
+      "query": "(integrin OR SRC)",
+      "keywords": [
+        "integrin",
+        "itg",
+        "src"
+      ]
+    },
+    "TGF-beta": {
+      "query": "(\"TGF-beta\" OR TGFB1)",
+      "keywords": [
+        "tgf",
+        "tgfb"
+      ]
+    }
+  },
+  "retmax_screen": 40,
+  "outputs": [
+    "pubmed_cargo_context_counts_strict_2015_2026.csv",
+    "pubmed_pathway_context_counts_strict_2015_2026.csv",
+    "supplement/screening_table_pathway_context_top40.csv",
+    "negative_space_priority_index.csv",
+    "cross_field_phase1_roadmap.csv",
+    "pubmed_context_year_counts_2010_2026_strict.csv"
+  ]
+}
