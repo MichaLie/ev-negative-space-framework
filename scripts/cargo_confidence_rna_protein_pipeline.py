@@ -8,7 +8,7 @@ Sources:
 - PubMed E-utilities (context evidence, biomarker evidence)
 - Final full-text adjudication set (mechanistic anchoring)
 
-Outputs are written to synthesis_output/ for manuscript integration.
+Outputs are written to the repository root and figures directories.
 """
 
 from __future__ import annotations
@@ -25,9 +25,11 @@ import pandas as pd
 import requests
 import seaborn as sns
 
-ROOT = Path(__file__).resolve().parent.parent  # repo root: Contro_CC/
+ROOT = Path(__file__).resolve().parent.parent
 SUPP = ROOT / 'supplement'
+FIG = ROOT / 'figures'
 SUPP.mkdir(parents=True, exist_ok=True)
+FIG.mkdir(parents=True, exist_ok=True)
 
 RUN_DATE = '2026-02-15'
 MINDATE = '2015/01/01'
@@ -451,12 +453,12 @@ def run():
     sns.barplot(data=tmp, y='candidate', x='cargo_confidence_score', hue='cargo_type', dodge=False)
     # Explicit threshold marker for High vs Moderate tiers
     plt.axvline(70, color='#111827', linestyle='--', linewidth=1.6, alpha=0.9)
-    plt.title('Figure 6. RNA/Protein Cargo Confidence Scores (EV-focused multi-source evidence)')
+    plt.title('Figure 7. RNA/Protein Cargo Confidence Scores (EV-focused multi-source evidence)')
     plt.xlabel('Cargo confidence score (0-100)')
     plt.ylabel('Candidate cargo')
     plt.legend(title='Cargo type', loc='lower right')
     plt.tight_layout()
-    plt.savefig(ROOT / 'figure6_cargo_confidence_scores.png', dpi=320)
+    plt.savefig(FIG / 'figure7_cargo_confidence_scores.png', dpi=320)
     plt.close()
 
     fig, ax = plt.subplots(figsize=(9.4, 6.4))
@@ -485,11 +487,11 @@ def run():
         else:
             dx, ha = 0.06, 'left'
         ax.text(x + dx, y + 0.2, r['pathway'], fontsize=8, ha=ha, clip_on=False)
-    ax.set_title('Figure 7. Pathway Negative-Space vs Cargo Confidence')
+    ax.set_title('Figure 8. Pathway Negative-Space vs Cargo Confidence')
     ax.set_xlabel('Negative-space priority index')
     ax.set_ylabel('Mean cargo confidence')
     fig.subplots_adjust(left=0.10, right=0.98, bottom=0.12, top=0.92)
-    fig.savefig(ROOT / 'figure7_negative_space_vs_cargo_confidence.png', dpi=320)
+    fig.savefig(FIG / 'figure8_negative_space_vs_cargo_confidence.png', dpi=320)
     plt.close(fig)
 
     # methods/source manifest

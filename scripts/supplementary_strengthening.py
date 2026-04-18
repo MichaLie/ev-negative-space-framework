@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-"""Generate supplementary robustness analyses and package-ready tables.
+"""Generate supplementary robustness analyses and machine-readable tables.
 
 This script adds three manuscript-supporting analyses:
 1. EV nomenclature sensitivity across alternative EV clauses.
 2. Cargo-confidence weight sensitivity across plausible weighting schemes.
 3. MISEV-aligned adjudication rigor summary from the full-text layer.
 
-Outputs are written both to the repository supplement/ directory and, when
-available, into sibling submission package directories.
+Outputs are written to the repository supplement/ directory.
 """
 
 from __future__ import annotations
@@ -22,9 +21,6 @@ from scipy.stats import spearmanr
 ROOT = Path(__file__).resolve().parent.parent
 SUPP = ROOT / "supplement"
 SUPP.mkdir(parents=True, exist_ok=True)
-
-PACKAGE_ROOT = ROOT.parent
-PACKAGE_TABLES = PACKAGE_ROOT / "05_SUPPLEMENTARY_TABLES"
 
 RUN_DATE = "2026-03-09"
 MINDATE = "2015/01/01"
@@ -314,17 +310,6 @@ def write_outputs() -> None:
     cargo_summary.to_csv(SUPP / "cargo_weight_sensitivity_summary.csv", index=False)
     rigor_summary.to_csv(SUPP / "mechanistic_rigor_summary.csv", index=False)
 
-    if PACKAGE_TABLES.exists():
-        nomenclature_table.to_csv(
-            PACKAGE_TABLES / "TableS5_ev_nomenclature_sensitivity.csv", index=False
-        )
-        rigor_summary.to_csv(
-            PACKAGE_TABLES / "TableS6_mechanistic_rigor_summary.csv", index=False
-        )
-        cargo_summary.to_csv(
-            PACKAGE_TABLES / "TableS14_cargo_weight_sensitivity.csv", index=False
-        )
-
     print("Wrote:")
     print(" - supplement/ev_nomenclature_sensitivity_counts.csv")
     print(" - supplement/ev_nomenclature_sensitivity_table.csv")
@@ -332,8 +317,6 @@ def write_outputs() -> None:
     print(" - supplement/cargo_weight_sensitivity_candidates.csv")
     print(" - supplement/cargo_weight_sensitivity_summary.csv")
     print(" - supplement/mechanistic_rigor_summary.csv")
-    if PACKAGE_TABLES.exists():
-        print(" - package TableS5, TableS6, TableS14")
 
 
 if __name__ == "__main__":

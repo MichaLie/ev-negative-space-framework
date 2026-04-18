@@ -1,27 +1,20 @@
-# Negative-Space Framework for Translational EV Research
+# EV Negative-Space Framework
 
-This repository contains the analysis scripts, frozen outputs, and figures supporting the manuscript:
+This repository contains the code, frozen outputs, figures, and machine-readable supplementary artifacts supporting the manuscript:
 
-`A Reproducible Framework for Cross-Disease Translational Evidence-Gap Mapping: Application to Extracellular Vesicle Signaling`
+`Negative-Space Mapping in Extracellular Vesicle Signaling: Cardiac Repair as a Cross-Disease Translational Priority`
 
-It is intended as the public computational artifact behind the paper and is organized for inspection, reuse, and reproducibility.
+It is organized as a public reproducibility package for inspection, reuse, and extension.
 
-## Scope
+## Overview
 
-Included:
+The framework combines five linked layers:
 
-- analysis scripts used to generate the bibliometric, cargo-confidence, robustness, and supplementary robustness outputs
-- frozen CSV/JSON outputs used by the manuscript and supplementary tables
-- final main figures and supplementary figures
-- machine-readable manifests and query registries needed for inspection and reruns
-
-Deliberately excluded:
-
-- manuscript text and journal submission files
-- cover letter and TOC submission assets
-- narrative supplementary prose
-- internal planning/request files that are not part of the scientific artifact
-- submission-packaging scripts and assets
+1. PubMed-based pathway and cargo landscape mapping across neurodegeneration, tumor metastasis, and cardiac repair
+2. Rule-based screening and quality control of pathway-context records
+3. Full-text mechanistic adjudication of the highest-priority axes
+4. RNA/protein cargo-confidence scoring from structured external evidence sources
+5. Translational outputs including the ranked roadmap, clinical-trial gap snapshot, and experimental starter kit
 
 ## Repository layout
 
@@ -32,15 +25,18 @@ scripts/
   robustness_hardening_analysis.py
   sensitivity_threshold_and_cardiac_relaxation.py
   supplementary_strengthening.py
+  render_figure1_workflow.py
 
 figures/
-  figure1_cargo_context_bars.png
-  figure2_annual_growth_contexts.png
-  figure3_pathway_heatmap.png
-  figure4_directionality_matrix_final.png
-  figure5_negative_space_priority.png
-  figure6_cargo_confidence_scores.png
-  figure7_negative_space_vs_cargo_confidence.png
+  figure1_workflow.png
+  figure1_workflow.svg
+  figure2_cargo_context_bars.png
+  figure3_annual_growth_contexts.png
+  figure4_pathway_heatmap.png
+  figure5_directionality_matrix_final.png
+  figure6_negative_space_priority.png
+  figure7_cargo_confidence_scores.png
+  figure8_negative_space_vs_cargo_confidence.png
 
 supplement/
   query_registry.csv
@@ -67,7 +63,22 @@ root-level outputs/
   ... additional final analysis outputs
 ```
 
-The path layout intentionally stays close to the original working repository so the scripts can still locate the frozen outputs they expect.
+## Main figures
+
+The `figures/` directory contains all eight main figures from the study:
+
+| # | File | Content |
+|---|---|---|
+| 1 | `figure1_workflow.png` | Workflow schematic of the five-layer framework |
+| 2 | `figure2_cargo_context_bars.png` | Cargo-class literature density by disease context |
+| 3 | `figure3_annual_growth_contexts.png` | Annual EV literature growth, 2010–2026 |
+| 4 | `figure4_pathway_heatmap.png` | Pathway-level EV evidence density heatmap |
+| 5 | `figure5_directionality_matrix_final.png` | Directionality signal by pathway and context |
+| 6 | `figure6_negative_space_priority.png` | Negative-space priority index by EV pathway |
+| 7 | `figure7_cargo_confidence_scores.png` | RNA/protein cargo-confidence scores for 31 candidates |
+| 8 | `figure8_negative_space_vs_cargo_confidence.png` | Pathway negative-space priority versus mean cargo confidence |
+
+The workflow schematic is reproducible via `scripts/render_figure1_workflow.py`.
 
 ## Dependencies
 
@@ -88,16 +99,16 @@ pip install -r requirements.txt
 ## Reproducibility notes
 
 - The frozen outputs in this repository correspond to the manuscript analysis window ending on `2026-02-15`.
-- Some scripts call live external services such as PubMed E-utilities, Enrichr, and ClinicalTrials.gov-related APIs or snapshots. Those reruns are therefore date-sensitive.
-- The frozen CSV/JSON outputs in this repository are the canonical paper-supporting artifacts; rerunning online queries later may not reproduce the exact same counts.
+- Some scripts call live external services such as PubMed E-utilities, Enrichr, and ClinicalTrials.gov-related APIs or snapshots. Later reruns are therefore date-sensitive.
+- The CSV and JSON outputs in this repository are the canonical frozen artifacts for the reported analysis.
 
 ## Suggested reading order
 
 1. `README.md`
 2. `scripts/systematic_ev_negative_space_pipeline.py`
-3. `supplement/query_registry.csv`
-4. `negative_space_priority_index.csv`
-5. `scripts/supplementary_strengthening.py`
+3. `scripts/render_figure1_workflow.py`
+4. `supplement/query_registry.csv`
+5. `negative_space_priority_index.csv`
 6. `supplement/ev_nomenclature_sensitivity_table.csv`
 7. `supplement/cargo_weight_sensitivity_summary.csv`
 8. `supplement/mechanistic_rigor_summary.csv`

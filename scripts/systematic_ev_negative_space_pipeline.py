@@ -36,10 +36,11 @@ RUN_DATE = "2026-02-15"
 RETMAX_SCREEN = 40
 SLEEP = 0.34
 
-ROOT = Path(__file__).resolve().parent.parent  # repo root: Contro_CC/
+ROOT = Path(__file__).resolve().parent.parent
 SUPP = ROOT / "supplement"
-FIG = ROOT
+FIG = ROOT / "figures"
 SUPP.mkdir(parents=True, exist_ok=True)
+FIG.mkdir(parents=True, exist_ok=True)
 
 EV_CLAUSE = "(extracellular vesicle OR exosome OR exosomes)"
 
@@ -555,7 +556,7 @@ def mine_year_trends():
 def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.DataFrame, trend_df: pd.DataFrame):
     sns.set_theme(style="whitegrid")
 
-    # Figure 1: pathway heatmap
+    # Figure 4: pathway heatmap
     mat = path_df.pivot(index="pathway", columns="context", values="count").loc[
         :, ["neurodegeneration", "tumor_metastasis", "cardiac_repair"]
     ]
@@ -565,7 +566,7 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     plt.xlabel("Context")
     plt.ylabel("Pathway")
     plt.tight_layout()
-    plt.savefig(FIG / "figure1_pathway_heatmap_strict.png", dpi=320)
+    plt.savefig(FIG / "figure4_pathway_heatmap.png", dpi=320)
     plt.close()
 
     # Figure 2: cargo bars
@@ -577,10 +578,10 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     plt.ylabel("PubMed records")
     plt.xticks(rotation=12)
     plt.tight_layout()
-    plt.savefig(FIG / "figure2_cargo_context_bars_strict.png", dpi=320)
+    plt.savefig(FIG / "figure2_cargo_context_bars.png", dpi=320)
     plt.close()
 
-    # Figure 3: priority index
+    # Figure 6: priority index
     plt.figure(figsize=(9, 5.8))
     sns.barplot(
         data=priority_df,
@@ -592,17 +593,17 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     plt.xlabel("Priority index")
     plt.ylabel("Pathway")
     plt.tight_layout()
-    plt.savefig(FIG / "figure3_negative_space_priority.png", dpi=320)
+    plt.savefig(FIG / "figure6_negative_space_priority.png", dpi=320)
     plt.close()
 
-    # Figure 4: trend lines
+    # Figure 3: trend lines
     plt.figure(figsize=(9, 5.6))
     sns.lineplot(data=trend_df, x="year", y="count", hue="context", marker="o")
     plt.title("Annual EV Literature Growth by Context (2010-2026)")
     plt.xlabel("Year")
     plt.ylabel("PubMed records")
     plt.tight_layout()
-    plt.savefig(FIG / "figure4_annual_growth_contexts_strict.png", dpi=320)
+    plt.savefig(FIG / "figure3_annual_growth_contexts.png", dpi=320)
     plt.close()
 
     # Supplementary PRISMA-like flow diagram from screening summary
