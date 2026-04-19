@@ -1,8 +1,7 @@
 {
   "snapshot_date": "2026-02-15",
-  "query_source": "ClinicalTrials.gov via MCP search_trials API",
+  "query_source": "ClinicalTrials.gov search snapshot",
   "note": "All counts are from ClinicalTrials.gov as of the snapshot date. Numbers may change as new trials are registered.",
-
   "summary_counts": {
     "total_ev_trials_condition_search": 444,
     "total_ev_trials_intervention_search": 491,
@@ -13,7 +12,6 @@
     "tumor_metastasis_plus_ev_broad_cancer_tumor": 133,
     "pathway_targeted_integrin_tgfbeta_autophagy": 2
   },
-
   "queries": {
     "total_ev_condition": {
       "field": "condition",
@@ -34,29 +32,27 @@
     "neurodegeneration_plus_ev": {
       "field": "condition",
       "query": "(\"extracellular vesicle\" OR exosome OR exosomes) AND (neurodegeneration OR Alzheimer OR Parkinson OR \"amyotrophic lateral sclerosis\" OR dementia)",
-      "total": 24,
-      "manuscript_note": "Manuscript reports 17 (correct at time of original query). Increased to 24 by snapshot date — 7 new trials registered between original manuscript query and this snapshot."
+      "total": 24
     },
     "tumor_metastasis_plus_ev_narrow": {
       "field": "condition",
       "query": "(\"extracellular vesicle\" OR exosome OR exosomes) AND (metastasis OR metastatic)",
       "total": 23,
-      "note": "This narrower query matches the manuscript's reported count of 23. Uses metastasis/metastatic terms only, consistent with the paper's tumor metastasis context definition."
+      "note": "Narrow metastasis-focused query using metastasis/metastatic terms only."
     },
     "tumor_metastasis_plus_ev_broad": {
       "field": "condition",
       "query": "(\"extracellular vesicle\" OR exosome OR exosomes) AND (cancer OR tumor OR metastasis OR metastatic)",
       "total": 133,
-      "note": "Broader query including all cancer/tumor terms. Not used in manuscript — provided for reference."
+      "note": "Broader cancer/tumor/metastasis query provided as a sensitivity reference."
     },
     "pathway_targeted": {
       "field": "condition",
       "query": "(\"extracellular vesicle\" OR exosome OR exosomes) AND (integrin OR \"TGF-beta\" OR autophagy)",
       "total": 2,
-      "note": "Both trials are observational, not interventional. Zero interventional trials target these priority pathways in an EV context."
+      "note": "Both matching trials are observational; no interventional EV trial in this snapshot targeted these pathway keywords."
     }
   },
-
   "representative_trials_cardiac": [
     {
       "nct_id": "NCT06536686",
@@ -99,7 +95,6 @@
       "enrollment": 10
     }
   ],
-
   "representative_trials_neurodegeneration": [
     {
       "nct_id": "NCT07334743",
@@ -144,7 +139,6 @@
       "enrollment": 120
     }
   ],
-
   "representative_trials_tumor_metastasis": [
     {
       "nct_id": "NCT07358715",
@@ -187,14 +181,16 @@
       "enrollment": 500
     }
   ],
-
   "pathway_targeted_trials": [
     {
       "nct_id": "NCT03267160",
       "title": "An Observation Study of Exosome Proteomics Released From Cardiopulmonary Organs and Hemodynamic Parameters in Sepsis",
       "status": "COMPLETED",
       "study_type": "OBSERVATIONAL",
-      "conditions": ["Hemodynamic Instability", "Autophagy"],
+      "conditions": [
+        "Hemodynamic Instability",
+        "Autophagy"
+      ],
       "sponsor": "Taipei Tzu Chi Hospital",
       "enrollment": 30,
       "note": "Autophagy listed as condition; not a direct EV-pathway interventional trial."
@@ -204,51 +200,63 @@
       "title": "Identification of New Diagnostic Protein Markers for Colorectal Cancer in Circulating Tumor Exosomes",
       "status": "COMPLETED",
       "study_type": "OBSERVATIONAL",
-      "conditions": ["Colorectal Cancer"],
+      "conditions": [
+        "Colorectal Cancer"
+      ],
       "sponsor": "CHU de Reims",
       "enrollment": 80,
       "note": "CRC exosome biomarker study; pathway keyword match is incidental."
     }
   ],
-
   "notable_trials_detailed": {
     "NCT05669144": {
       "title": "Co-transplantation of Mesenchymal Stem Cell Derived Exosomes and Autologous Mitochondria for Patients Candidate for CABG Surgery With EF<25%",
-      "phase": ["PHASE1", "PHASE2"],
+      "phase": [
+        "PHASE1",
+        "PHASE2"
+      ],
       "status": "UNKNOWN",
       "sponsor": "Tehran University of Medical Sciences",
       "enrollment": 20,
-      "conditions": ["Myocardial Infarction", "Myocardial Ischemia", "Myocardial Stunning"],
+      "conditions": [
+        "Myocardial Infarction",
+        "Myocardial Ischemia",
+        "Myocardial Stunning"
+      ],
       "intervention": "Intracoronary and intra-myocardial injection of UC-MSC-derived exosomes and/or autologous mitochondria during CABG",
       "design": "4 arms: exosomes only (n=5), mitochondria only (n=5), exosomes+mitochondria (n=5), placebo (n=5)",
-      "primary_outcomes": ["Ejection fraction at 3 months", "Allergic reactions at 3 months"],
+      "primary_outcomes": [
+        "Ejection fraction at 3 months",
+        "Allergic reactions at 3 months"
+      ],
       "start_date": "2022-04-20",
       "location": "Tehran Heart Center, Iran",
-      "relevance": "Most advanced interventional EV trial in cardiac repair. Directly relevant to the paper's negative-space priority for Integrin/Src and cardiac contexts."
+      "relevance": "Advanced interventional EV trial in cardiac repair."
     },
     "NCT06607900": {
       "title": "hUC-MSC-sEV-001 Nasal Drops for the Treatment of Multiple Neurodegenerative Diseases",
-      "phase": ["PHASE1"],
+      "phase": [
+        "PHASE1"
+      ],
       "status": "NOT_YET_RECRUITING",
       "sponsor": "Xuanwu Hospital, Beijing",
       "enrollment": 120,
-      "conditions": ["Alzheimer Disease", "Parkinson Disease", "Lewy Body Dementia", "Multiple System Atrophy", "Frontotemporal Dementia", "Amyotrophic Lateral Sclerosis"],
+      "conditions": [
+        "Alzheimer Disease",
+        "Parkinson Disease",
+        "Lewy Body Dementia",
+        "Multiple System Atrophy",
+        "Frontotemporal Dementia",
+        "Amyotrophic Lateral Sclerosis"
+      ],
       "intervention": "hUC-MSC-sEV-001 nasal drops",
       "design": "Multi-center, open, single-arm, basket-design Phase 1",
-      "primary_outcomes": ["Disease-specific cognitive/functional scales at 6-12 months (ADAS-Cog for AD, MDS-UPDRS for PD, UMSARS for MSA, ADCS-CGIC for DLB, CDR+NACC for FTD, ALSFRS-R for ALS)"],
+      "primary_outcomes": [
+        "Disease-specific cognitive/functional scales at 6-12 months (ADAS-Cog for AD, MDS-UPDRS for PD, UMSARS for MSA, ADCS-CGIC for DLB, CDR+NACC for FTD, ALSFRS-R for ALS)"
+      ],
       "start_date": "2025-07-01",
       "location": "Xuanwu Hospital, Capital Medical University, Beijing, China",
-      "relevance": "Largest planned EV-based interventional trial in neurodegeneration. Basket design covers 6 neurodegenerative diseases. Directly relevant to the paper's finding that neurodegeneration EV research is growing but clinical translation lags."
+      "relevance": "Planned EV-based interventional trial spanning six neurodegenerative diseases."
     }
-  },
-
-  "manuscript_consistency_notes": {
-    "total_ev_trials": "444 — matches manuscript",
-    "interventional_only": "255 — matches manuscript",
-    "cardiac_ev": "18 — matches manuscript",
-    "neurodegeneration_ev": "24 — matches manuscript (updated from earlier draft value of 17)",
-    "metastasis_ev_narrow": "23 — matches manuscript (narrow query: metastasis OR metastatic)",
-    "metastasis_ev_broad": "133 — broader cancer/tumor/metastasis query, not used in manuscript",
-    "pathway_targeted": "2 (both observational) — matches manuscript claim of near-absence"
   }
 }

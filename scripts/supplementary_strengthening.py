@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Generate supplementary robustness analyses and machine-readable tables.
+"""Generate robustness analyses and machine-readable tables.
 
-This script adds three manuscript-supporting analyses:
+This script adds three analysis layers:
 1. EV nomenclature sensitivity across alternative EV clauses.
 2. Cargo-confidence weight sensitivity across plausible weighting schemes.
 3. MISEV-aligned adjudication rigor summary from the full-text layer.
 
-Outputs are written to the repository supplement/ directory.
+Outputs are written to the repository `supplement/` directory.
 """
 
 from __future__ import annotations

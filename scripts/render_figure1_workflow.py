@@ -275,7 +275,7 @@ output_cards = [
     {
         "title": "Experimental starter kit",
         "body": "donor anchor →\ntarget anchor → EV source\n→ endpoints\n→ safety gates\n→ falsification criteria",
-        "footer": "Supplementary Table S18",
+        "footer": None,
     },
 ]
 

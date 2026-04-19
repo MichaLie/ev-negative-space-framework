@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Generate threshold-sweep, continuous-variant, and cardiac-only relaxation
-sensitivity analyses (Tables S11 and S12).
+sensitivity analyses.
 
 B) Maturity-threshold sweep (50, 75, 100, 150) and continuous variant
-   -> sensitivity_priority_threshold.csv  (Table S12)
+   -> sensitivity_priority_threshold.csv
    Uses already-collected strict counts; no API calls required.
 
 D) Cardiac-only relaxation (relax cardiac query while holding neuro/tumor strict)
-   -> sensitivity_cardiac_query.csv  (Table S11)
+   -> sensitivity_cardiac_query.csv
    Requires PubMed E-utilities API calls for relaxed/broadest cardiac queries
    while neuro and tumor contexts remain at strict stringency.
 
@@ -133,12 +133,7 @@ def compute_continuous(
     counts: Dict[str, int],
     smoothing: float = 1.0,
 ) -> float:
-    """Continuous maturity variant with log-scaled donor-context weighting.
-
-    Below the 100-record maturity target, the raw smoothed ratio is downweighted
-    by log(max_count + smoothing) / log(100), capped at 1.0 once the largest
-    context reaches the maturity target. This reproduces the submitted Table S12.
-    """
+    """Continuous maturity variant with log-scaled donor-context weighting."""
     max_count = max(counts.values())
     min_count = min(counts.values())
     ratio = (max_count + smoothing) / (min_count + smoothing)
@@ -150,7 +145,7 @@ def compute_continuous(
 
 
 # ---------------------------------------------------------------------------
-# B: Threshold sweep + continuous variant  -> Table S12
+# B: Threshold sweep + continuous variant
 # ---------------------------------------------------------------------------
 
 def build_threshold_sensitivity() -> pd.DataFrame:
@@ -184,7 +179,7 @@ def build_threshold_sensitivity() -> pd.DataFrame:
 
 
 # ---------------------------------------------------------------------------
-# D: Cardiac-only relaxation  -> Table S11
+# D: Cardiac-only relaxation
 # ---------------------------------------------------------------------------
 
 def build_cardiac_relaxation() -> pd.DataFrame:
@@ -239,8 +234,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--api", action="store_true",
-        help="Enable PubMed API calls for cardiac-only relaxation (Table S11). "
-             "Without this flag, only the threshold sweep (Table S12) is generated."
+        help="Enable PubMed API calls for cardiac-only relaxation. "
+             "Without this flag, only the threshold sweep is generated."
     )
     args = parser.parse_args()
 
@@ -248,15 +243,15 @@ def main() -> None:
     print("Sensitivity Analysis: Threshold Sweep + Cardiac Relaxation")
     print("=" * 60)
 
-    print("\n--- B: Maturity-threshold sweep (Table S12) ---")
+    print("\n--- B: Maturity-threshold sweep ---")
     threshold_df = build_threshold_sensitivity()
 
     if args.api:
-        print("\n--- D: Cardiac-only relaxation (Table S11) ---")
+        print("\n--- D: Cardiac-only relaxation ---")
         print("(Querying PubMed E-utilities — cardiac tiers only, neuro/tumor held strict)")
         cardiac_df = build_cardiac_relaxation()
     else:
-        print("\n--- D: Cardiac-only relaxation (Table S11) ---")
+        print("\n--- D: Cardiac-only relaxation ---")
         print("Skipped (requires --api flag for live PubMed queries).")
         print("Existing sensitivity_cardiac_query.csv is retained from original run.")
 

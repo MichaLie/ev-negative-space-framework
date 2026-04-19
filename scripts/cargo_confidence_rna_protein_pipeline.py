@@ -453,7 +453,6 @@ def run():
     sns.barplot(data=tmp, y='candidate', x='cargo_confidence_score', hue='cargo_type', dodge=False)
     # Explicit threshold marker for High vs Moderate tiers
     plt.axvline(70, color='#111827', linestyle='--', linewidth=1.6, alpha=0.9)
-    plt.title('Figure 7. RNA/Protein Cargo Confidence Scores (EV-focused multi-source evidence)')
     plt.xlabel('Cargo confidence score (0-100)')
     plt.ylabel('Candidate cargo')
     plt.legend(title='Cargo type', loc='lower right')
@@ -487,7 +486,6 @@ def run():
         else:
             dx, ha = 0.06, 'left'
         ax.text(x + dx, y + 0.2, r['pathway'], fontsize=8, ha=ha, clip_on=False)
-    ax.set_title('Figure 8. Pathway Negative-Space vs Cargo Confidence')
     ax.set_xlabel('Negative-space priority index')
     ax.set_ylabel('Mean cargo confidence')
     fig.subplots_adjust(left=0.10, right=0.98, bottom=0.12, top=0.92)

@@ -6,7 +6,7 @@ Builds reproducible evidence tables for:
 - EV pathway x context evidence density
 - PMID-level screening set with publication type + relevance scoring
 - Negative-space prioritization index and roadmap
-- Figures for manuscript and supplement
+- Figures and machine-readable repository outputs
 
 Run date anchored to analysis day unless overridden.
 """
@@ -562,7 +562,6 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     ]
     plt.figure(figsize=(9, 6))
     sns.heatmap(mat, annot=True, fmt="d", cmap="YlGnBu", linewidths=0.5)
-    plt.title("EV Pathway Evidence Density by Context (2015-01-01 to 2026-02-15)")
     plt.xlabel("Context")
     plt.ylabel("Pathway")
     plt.tight_layout()
@@ -573,7 +572,6 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     plt.figure(figsize=(9, 5.6))
     tmp = cargo_df.copy()
     sns.barplot(data=tmp, x="cargo_axis", y="count", hue="context")
-    plt.title("EV Cargo-Class Literature Density by Context (2015-2026)")
     plt.xlabel("Cargo axis")
     plt.ylabel("PubMed records")
     plt.xticks(rotation=12)
@@ -589,7 +587,6 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
         x="negative_space_priority_index",
         color="#247ba0",
     )
-    plt.title("Negative-Space Priority Index by EV Pathway")
     plt.xlabel("Priority index")
     plt.ylabel("Pathway")
     plt.tight_layout()
@@ -599,7 +596,6 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
     # Figure 3: trend lines
     plt.figure(figsize=(9, 5.6))
     sns.lineplot(data=trend_df, x="year", y="count", hue="context", marker="o")
-    plt.title("Annual EV Literature Growth by Context (2010-2026)")
     plt.xlabel("Year")
     plt.ylabel("PubMed records")
     plt.tight_layout()
@@ -640,7 +636,6 @@ def make_figures(cargo_df: pd.DataFrame, path_df: pd.DataFrame, priority_df: pd.
         ax.annotate("", xy=(0.68, 0.50), xytext=(0.53, 0.62), arrowprops=arrowprops)
         ax.annotate("", xy=(0.5, 0.28), xytext=(0.5, 0.38), arrowprops=arrowprops)
 
-        plt.title("Supplementary Figure S1. Screening Workflow Summary", fontsize=12, pad=18, color="#111827")
         plt.tight_layout()
         plt.savefig(SUPP / "figureS1_screening_flow.png", dpi=320)
         plt.close()

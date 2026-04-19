@@ -286,24 +286,45 @@ def main() -> None:
 
     manifest = {
         "run_date": RUN_DATE,
+        "description": "Manifest of robustness analyses and their public machine-readable output files.",
         "window": {"mindate": MINDATE, "maxdate": MAXDATE},
-        "outputs": [
-            "supplement/sensitivity_matched_query_counts_by_tier.csv",
-            "supplement/sensitivity_matched_query_priority_ranks.csv",
-            "supplement/sensitivity_matched_query_rank_stability.csv",
-            "supplement/priority_index_alternative_formulations.csv",
-            "supplement/priority_index_rank_stability_summary.csv",
-            "supplement/integrin_src_partition_counts.csv",
+        "robustness_analyses": [
+            {
+                "analysis": "Cardiac-only query relaxation",
+                "file": "sensitivity_cardiac_query.csv",
+            },
+            {
+                "analysis": "Maturity-threshold sensitivity (thresholds 50, 75, 100, 150, continuous)",
+                "file": "sensitivity_priority_threshold.csv",
+            },
+            {
+                "analysis": "Matched-stringency context tiers across all three domains",
+                "file": "supplement/sensitivity_matched_query_priority_ranks.csv",
+            },
+            {
+                "analysis": "Alternative index formulations and smoothing constants (12 formulations)",
+                "file": "supplement/priority_index_alternative_formulations.csv",
+            },
+            {
+                "analysis": "Integrin/Src axis partition (integrin-only, Src-only, combined)",
+                "file": "supplement/integrin_src_partition_counts.csv",
+            },
         ],
         "matched_query_tiers": list(CONTEXT_QUERY_TIERS.keys()),
-        "index_formulations_summary_rows": int(len(index_stability_df)),
+        "index_formulations_count": int(len(index_stability_df)),
         "integrin_src_contexts": int(len(partition_df)),
     }
     (SUPP / "robustness_hardening_manifest.json").write_text(json.dumps(manifest, indent=2))
 
     print("Saved robustness artifacts:")
-    for p in manifest["outputs"]:
-        print("-", p)
+    print("- sensitivity_cardiac_query.csv")
+    print("- sensitivity_priority_threshold.csv")
+    print("- supplement/sensitivity_matched_query_counts_by_tier.csv")
+    print("- supplement/sensitivity_matched_query_priority_ranks.csv")
+    print("- supplement/sensitivity_matched_query_rank_stability.csv")
+    print("- supplement/priority_index_alternative_formulations.csv")
+    print("- supplement/priority_index_rank_stability_summary.csv")
+    print("- supplement/integrin_src_partition_counts.csv")
     print("- supplement/robustness_hardening_manifest.json")
     print("\nMatched-query top3 by tier:")
     print(matched_stability_df.to_string(index=False))

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: "Negative-Space Framework for Translational EV Research"
-message: "If you use this repository, please cite the associated manuscript and repository."
+title: "EV Negative-Space Framework"
+message: "If you use this repository, please cite it."
 type: software
 authors:
   - family-names: "Liegertova"
