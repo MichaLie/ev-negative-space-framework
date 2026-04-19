@@ -1,22 +1,38 @@
 {
   "run_date": "2026-02-15",
+  "description": "Manifest of robustness-hardening analyses for the negative-space priority framework. Each analysis below maps to a public S-numbered supplementary table in this submission.",
   "window": {
     "mindate": "2015/01/01",
     "maxdate": "2026/02/15"
   },
-  "outputs": [
-    "supplement/sensitivity_matched_query_counts_by_tier.csv",
-    "supplement/sensitivity_matched_query_priority_ranks.csv",
-    "supplement/sensitivity_matched_query_rank_stability.csv",
-    "supplement/priority_index_alternative_formulations.csv",
-    "supplement/priority_index_rank_stability_summary.csv",
-    "supplement/integrin_src_partition_counts.csv"
+  "robustness_analyses": [
+    {
+      "analysis": "Cardiac-only query relaxation",
+      "supplementary_table": "Table S11",
+      "file": "TableS11_sensitivity_cardiac_query.csv"
+    },
+    {
+      "analysis": "Maturity-threshold sensitivity (thresholds 50, 75, 100, 150, continuous)",
+      "supplementary_table": "Table S12",
+      "file": "TableS12_sensitivity_priority_threshold.csv"
+    },
+    {
+      "analysis": "Matched-stringency context tiers across all three domains",
+      "supplementary_table": "Table S15",
+      "file": "TableS15_matched_stringency_ranks.csv"
+    },
+    {
+      "analysis": "Alternative index formulations and smoothing constants (12 formulations)",
+      "supplementary_table": "Table S16",
+      "file": "TableS16_alternative_formulations.csv"
+    },
+    {
+      "analysis": "Integrin/Src axis partition (integrin-only, Src-only, combined)",
+      "supplementary_table": "Table S17",
+      "file": "TableS17_integrin_src_partition.csv"
+    }
   ],
-  "matched_query_tiers": [
-    "strict",
-    "relaxed",
-    "broadest"
-  ],
-  "index_formulations_summary_rows": 12,
+  "matched_query_tiers": ["strict", "relaxed", "broadest"],
+  "index_formulations_count": 12,
   "integrin_src_contexts": 3
 }

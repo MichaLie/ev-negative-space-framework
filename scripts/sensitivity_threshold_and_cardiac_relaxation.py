@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import time
 from pathlib import Path
 from typing import Dict
@@ -29,6 +30,19 @@ import requests
 
 ROOT = Path(__file__).resolve().parent.parent
 SUPP = ROOT / "supplement"
+
+TABLE_S12_ORDER = [
+    "Integrin/Src",
+    "Autophagy",
+    "TGF-beta",
+    "Wnt",
+    "Hypoxia/HIF-1",
+    "mTOR",
+    "Complement",
+    "NF-kB",
+    "Sphingolipid/Ceramide",
+    "Notch",
+]
 
 # PubMed E-utilities configuration
 BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -119,10 +133,20 @@ def compute_continuous(
     counts: Dict[str, int],
     smoothing: float = 1.0,
 ) -> float:
-    """Continuous variant: raw smoothed ratio without hard maturity cutoff."""
+    """Continuous maturity variant with log-scaled donor-context weighting.
+
+    Below the 100-record maturity target, the raw smoothed ratio is downweighted
+    by log(max_count + smoothing) / log(100), capped at 1.0 once the largest
+    context reaches the maturity target. This reproduces the submitted Table S12.
+    """
     max_count = max(counts.values())
     min_count = min(counts.values())
-    return (max_count + smoothing) / (min_count + smoothing)
+    ratio = (max_count + smoothing) / (min_count + smoothing)
+    maturity_weight = min(
+        math.log(max_count + smoothing) / math.log(100.0),
+        1.0,
+    )
+    return ratio * maturity_weight
 
 
 # ---------------------------------------------------------------------------
@@ -152,7 +176,7 @@ def build_threshold_sensitivity() -> pd.DataFrame:
         entry["priority_continuous"] = round(compute_continuous(counts, smoothing=1.0), 2)
         rows.append(entry)
 
-    df = pd.DataFrame(rows).sort_values("priority_threshold_100", ascending=False)
+    df = pd.DataFrame(rows).set_index("pathway").loc[TABLE_S12_ORDER].reset_index()
     df.to_csv(ROOT / "sensitivity_priority_threshold.csv", index=False)
     print("Saved: sensitivity_priority_threshold.csv")
     print(df.to_string(index=False))

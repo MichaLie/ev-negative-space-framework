@@ -38,3 +38,17 @@ pathway_context,Integrin/Src,cardiac_repair,(extracellular vesicle OR exosome OR
 pathway_context,TGF-beta,neurodegeneration,"(extracellular vesicle OR exosome OR exosomes) AND (neurodegeneration OR neurodegenerative OR Alzheimer OR Parkinson OR ""amyotrophic lateral sclerosis"" OR ALS OR frontotemporal dementia OR Huntington) AND (""TGF-beta"" OR TGFB1)"
 pathway_context,TGF-beta,tumor_metastasis,"(extracellular vesicle OR exosome OR exosomes) AND ((cancer OR tumor OR tumour) AND (metastasis OR metastatic OR premetastatic OR organotropism OR dissemination)) AND (""TGF-beta"" OR TGFB1)"
 pathway_context,TGF-beta,cardiac_repair,"(extracellular vesicle OR exosome OR exosomes) AND ((myocardial infarction OR ischemia-reperfusion OR heart failure OR cardiac injury) AND (repair OR regeneration OR cardioprotection OR post-infarction)) AND (""TGF-beta"" OR TGFB1)"
+clinicaltrials_broad,all,any,(extracellular vesicle OR exosome)
+clinicaltrials_broad,all,interventional,(extracellular vesicle OR exosome) [study_type = Interventional]
+clinicaltrials_broad,all,observational,(extracellular vesicle OR exosome) [study_type = Observational]
+clinicaltrials_context,cardiac_repair,any,"(extracellular vesicle OR exosome) AND (myocardial OR cardiac) AND (infarction OR repair OR regeneration OR injury)"
+clinicaltrials_context,neurodegeneration,any,"(extracellular vesicle OR exosome) AND (Alzheimer OR Parkinson OR ALS OR ""amyotrophic lateral sclerosis"" OR ""frontotemporal dementia"" OR Huntington)"
+clinicaltrials_context,tumor_metastasis,any,(extracellular vesicle OR exosome) AND (metastasis OR metastatic OR ""premetastatic niche"")
+clinicaltrials_pathway,integrin_src,any,(extracellular vesicle OR exosome) AND integrin
+clinicaltrials_pathway,tgf_beta,any,(extracellular vesicle OR exosome) AND TGF-beta
+clinicaltrials_pathway,autophagy,any,(extracellular vesicle OR exosome) AND autophagy
+clinicaltrials_pathway,wnt,any,(extracellular vesicle OR exosome) AND Wnt
+clinicaltrials_pathway,hypoxia_hif1,any,(extracellular vesicle OR exosome) AND (HIF OR hypoxia)
+clinicaltrials_exemplar_nct,cardiac,NCT05669144,"MSC-derived exosomes co-transplanted with mitochondria for myocardial infarction (Phase 1/2, interventional)"
+clinicaltrials_exemplar_nct,neurodegeneration,NCT06607900,"Human umbilical cord-derived MSC small EV nasal drops for neurodegenerative diseases (Phase 1, interventional)"
+clinicaltrials_scoring,pathway_targeted_EV_intervention,definition,"A trial was counted as ""pathway-targeted EV intervention"" only if the EV product was administered as a therapeutic with the pathway as the intended mechanism of action; trials using EVs as biomarkers or as observational outcomes of the pathway were recorded but not counted as pathway-targeted interventions."
